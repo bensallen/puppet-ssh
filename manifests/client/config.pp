@@ -3,6 +3,7 @@ class ssh::client::config {
     ensure  => present,
     owner   => 'root',
     group   => 'root',
+    replace => false,
     source  => "puppet:///modules/${module_name}/ssh_config",
     require => Class['ssh::client::install'],
   }
