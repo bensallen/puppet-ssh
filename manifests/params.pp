@@ -25,6 +25,6 @@ class ssh::params {
     }
   }
   
-  $ssh_extra_keys = hiera('ssh::extra_keys')
+  $ssh_extra_keys = hiera('ssh::extra_keys', '')
 
 }

@@ -1,4 +1,12 @@
-class ssh::hostkeys {
+define ssh_extra_keys($type, $host_aliases, $key) {
+  @@sshkey { $name:
+    host_aliases => $host_aliases,
+    type	 => $type,
+    key		 => $key,
+  }
+}
+
+class ssh::hostkeys inherits ssh::params {
   $ipaddresses = ipaddresses()
   $host_aliases = flatten([ $::fqdn, $::hostname, $ipaddresses ])
 
@@ -20,6 +28,6 @@ class ssh::hostkeys {
     }
   }
   if $ssh_extra_keys {
-    create_resources("@@sshkey", $ssh_extra_keys)
+    create_resources(ssh_extra_keys, $ssh_extra_keys)
   }
 }
