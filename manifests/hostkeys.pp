@@ -19,4 +19,7 @@ class ssh::hostkeys {
       key          => $::sshecdsakey,
     }
   }
+  if $ssh_extra_keys {
+    create_resources("@@sshkey", $ssh_extra_keys)
+  }
 }
