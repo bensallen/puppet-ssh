@@ -6,6 +6,7 @@ class ssh::params {
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
       $ssh_known_hosts = '/etc/ssh/ssh_known_hosts'
+      $pamd_sshd = '/etc/pam.d/sshd'
       $service_name = 'ssh'
     }
     redhat: {
@@ -14,6 +15,7 @@ class ssh::params {
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
       $ssh_known_hosts = '/etc/ssh/ssh_known_hosts'
+      $pamd_sshd = '/etc/pam.d/sshd'
       $service_name = 'sshd'
     }
     default: {
