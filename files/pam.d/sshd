@@ -1,4 +1,5 @@
 #%PAM-1.0
+# DO NOT EDIT, file controlled by Puppet. All changes will be overwritten!
 auth       optional     pam_echo.so file=/etc/issue.net
 auth       optional     pam_echo.so file=/etc/issue.alcf
 auth	     required	    pam_sepermit.so
