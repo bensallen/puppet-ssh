@@ -46,7 +46,7 @@ PermitEmptyPasswords no
 # some PAM modules and threads)
 ChallengeResponseAuthentication yes
 
-# Change to no to disable tunnelled clear text passwords
+# Change to no to disable tunneled clear text passwords
 PasswordAuthentication no
 
 # Kerberos options
@@ -76,3 +76,6 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 
 UsePAM yes
 UseDNS yes
+
+Match User root
+  HostbasedAuthentication no
